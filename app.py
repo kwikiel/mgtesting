@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/init")
 def start():
     db.create_all()
-    test = Market(id=1337, lbactive=3.14)
+    test = Market(id=1335, lbactive=3.14)
     db.session.add(test)
     db.session.commit()
 

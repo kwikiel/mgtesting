@@ -1,10 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import datetime
-import os
-import urlparse
 
-urlparse.uses_netloc.append("postgres")
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://zwnlkqhnfyaxnh:GFkT10cJtu6REr91W_Xlj7ePMF@ec2-107-22-170-249.compute-1.amazonaws.com:5432/dfe8besv4oq9ol'
 db = SQLAlchemy(app)
