@@ -8,9 +8,10 @@ app = Flask(__name__)
 @app.route("/init")
 def start():
     db.create_all()
-    test = Market(id=1337, lbactive=3.14,None)
+    test = Market(id=1337, lbactive=3.14)
     db.session.add(test)
     db.session.commit()
+
 
 @app.route("/")
 def hello():
