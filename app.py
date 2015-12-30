@@ -11,6 +11,7 @@ def start():
     test = Market(id=1335, lbactive=3.14)
     db.session.add(test)
     db.session.commit()
+    return "yolo"
 
 
 @app.route("/")
