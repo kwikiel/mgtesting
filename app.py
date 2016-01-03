@@ -18,3 +18,12 @@ def start():
 def hello():
     ping = Market.query.all()
     return render_template("index.html", data=ping)
+
+
+@app.route("/test")
+def test():
+    return render_template("test.html")
+
+@app.route("data/fake_users1.json")
+def ret():
+    return render_template("fake_users1.json")
