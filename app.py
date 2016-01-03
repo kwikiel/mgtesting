@@ -24,6 +24,7 @@ def hello():
 def test():
     return render_template("test.html")
 
-@app.route("data/fake_users1.json")
+
+@app.route("/data/fake_users1.json")
 def ret():
     return render_template("fake_users1.json")
