@@ -29,5 +29,3 @@ def ret():
     raw = Market.query.all()
     cooked = json.dumps([d.lbactive for d in raw])
     return render_template("fake_users1.json", cooked=cooked)
-
-app.run(debug=True)
