@@ -12,8 +12,3 @@ class Market(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     lbactive = db.Column(db.Float())
     created = db.Column(db.DateTime, default=datetime.datetime.utcnow)
-
-    def __init__(self, id, lbactive, created):
-        self.id = id
-        self.lbactive = lbactive
-        self.created = created
