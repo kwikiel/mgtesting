@@ -17,6 +17,3 @@ class Market(db.Model):
         self.id = id
         self.lbactive = lbactive
         self.created = created
-
-    def __repr__(self, id, lbactive, created):
-        return "<Date: {0} Active: {1}>".format(self.created, self.lbactive)
