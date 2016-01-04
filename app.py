@@ -1,8 +1,6 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, jsonify
 from models import Market
 from models import db
-import json
 app = Flask(__name__)
 
 
@@ -21,11 +19,14 @@ def hello():
 
 @app.route("/test")
 def test():
-    return render_template("base.html")
+    return render_template("test.html")
 
 
-@app.route("/data.json")
+@app.route("/papiez.json")
 def ret():
-    raw = Market.query.all()
-    cooked = json.dumps([d.lbactive for d in raw])
-    return render_template("fake_users1.json", cooked=cooked)
+    return jsonify({'data': [
+        {
+            'date': c.created.strftime('%Y-%m-%d'),
+            'value': 3.14,
+        } for c in Market.query.all()
+    ]})
