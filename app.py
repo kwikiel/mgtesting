@@ -17,7 +17,7 @@ def test():
 def ret():
     return jsonify({'data': [
         {
-            'date': c.created.strftime('%Y-%m-%d %H:%M:%S'),
+            'date': c.created.strftime('%Y-%m-%d'),
             'value': c.lbactive,
         } for c in Market.query.all()
     ]})
