@@ -1,20 +1,11 @@
 from flask import Flask, render_template, jsonify
 from models import Market
-from models import db
 app = Flask(__name__)
-
-
-@app.route("/init")
-def start():
-    db.create_all()
-    db.session.commit()
-    return "yolo"
 
 
 @app.route("/")
 def hello():
-    ping = Market.query.first()
-    return render_template("index.html", data=ping)
+    return "/test for chart and /trigger for trg"
 
 
 @app.route("/test")
